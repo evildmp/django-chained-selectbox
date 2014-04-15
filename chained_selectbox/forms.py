@@ -32,7 +32,7 @@ class FKChainedChoicesForm(forms.ModelForm):
     parent_field.
     """
     def __init__(self, *args, **kwargs):
-        super(ChainedChoicesForm, self).__init__(*args, **kwargs)
+        super(FKChainedChoicesForm, self).__init__(*args, **kwargs)
         if "instance" in kwargs:
             instance = kwargs['instance']
             c = Client()
