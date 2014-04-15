@@ -16,8 +16,6 @@ class ChainedChoiceField(ChoiceField):
 
         super(ChainedChoiceField, self).__init__(choices=self.choices, *args, **defaults)
 
-
     def valid_value(self, value):
         "Dynamic choices so just return True for now"
         return True
-
