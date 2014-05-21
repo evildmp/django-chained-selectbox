@@ -25,8 +25,8 @@ class ChainedSelect(Select):
 
     class Media:
         js = [
-            'admin/js/jquery.min.js',
-            'admin/js/jquery.init.js',
+            # 'admin/js/jquery.min.js',
+            # 'admin/js/jquery.init.js',
             'js/chained-select.min.js'
             ]
 
