@@ -21,12 +21,15 @@ Form must inherit from ChainedChoicesForm which loads the options when there is 
         field_two = ChainedChoiceField(parent_field='field_one', ajax_url='/chainedselectchoices')
         field_three = ChainedChoiceField(parent_field='field_two', ajax_url='/chainedselectchoices')
 
+If the `parent_field` is a foreign key, then inherit from FKChainedChoicesForm
+instead. This obtains the `id` of the field, and ensures that the widget works
+correctly with both new and existing instances.
 
 Ajax call is made whenever the parent field is changed. You must set up the ajax to return json list of lists.
 
     class ChainedSelectChoices(BaseDetailView):
         """
-        View to handel the ajax request for the field options.
+        View to handle the ajax request for the field options.
         """
 
         def get(self, request, *args, **kwargs):
@@ -45,4 +48,3 @@ Ajax call is made whenever the parent field is changed. You must set up the ajax
             )
             add_never_cache_headers(response)
             return response
-
